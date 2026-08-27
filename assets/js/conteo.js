@@ -12,9 +12,11 @@ class ConteoManager {
         // ej: conteo.html?tipo=mercado
         const params = new URLSearchParams(window.location.search);
         this.tipo = (params.get('tipo') || 'mercado').toLowerCase();
-        if (!['mercado', 'farmacia'].includes(this.tipo)) this.tipo = 'mercado';
+        if (!['mercado', 'farmacia', 'bodega'].includes(this.tipo)) this.tipo = 'mercado';
         
-        this.gidSucursal = this.tipo === 'mercado' ? CONFIG.GID_INVENTARIO_MER : CONFIG.GID_INVENTARIO_FAR;
+        this.gidSucursal = this.tipo === 'mercado' ? CONFIG.GID_INVENTARIO_MER
+            : this.tipo === 'bodega' ? CONFIG.GID_INVENTARIO_BOD
+            : CONFIG.GID_INVENTARIO_FAR;
         
         this._pintarTitulo();
         

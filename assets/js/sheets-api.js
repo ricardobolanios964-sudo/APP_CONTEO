@@ -307,7 +307,7 @@ const SheetsAPI = {
     // ================================================
 
     _generarIdRegistro(usuario, tipo) {
-        const prefijo = tipo === 'mercado' ? 'MERC' : 'FARM';
+        const prefijo = tipo === 'mercado' ? 'MERC' : tipo === 'bodega' ? 'BOD' : 'FARM';
         const ahora = new Date();
         const yy = String(ahora.getFullYear()).slice(-2);
         const mm = String(ahora.getMonth() + 1).padStart(2, '0');
@@ -352,7 +352,9 @@ const SheetsAPI = {
             ESTATUS: datos.estatus || 'Registrado',
         };
 
-        const gidSucursal = tipo === 'mercado' ? CONFIG.GID_INVENTARIO_MER : CONFIG.GID_INVENTARIO_FAR;
+        const gidSucursal = tipo === 'mercado' ? CONFIG.GID_INVENTARIO_MER
+            : tipo === 'bodega' ? CONFIG.GID_INVENTARIO_BOD
+            : CONFIG.GID_INVENTARIO_FAR;
 
         try {
             // text/plain evita el preflight CORS con Apps Script

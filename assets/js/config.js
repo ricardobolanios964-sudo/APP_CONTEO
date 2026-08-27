@@ -9,7 +9,8 @@ const CONFIG = {
     GID_USUARIOS: '138385541',
     GID_INVENTARIO_MER: '1290916129',
     GID_INVENTARIO_FAR: '1929739320',
-    WEBAPP_URL: 'https://script.google.com/macros/s/AKfycbyUeqSKgnbFImR8BzhGLH007dTnAShbwvjKGO6XcvuSEX6LaxUGhptAwHZYONacYebINw/exec',
+    GID_INVENTARIO_BOD: '1293612067',
+    WEBAPP_URL: 'https://script.google.com/macros/s/AKfycbzTAf-azn6D_jF009sIvaAKyMg8xz7oT19CCGBcHeENZHF5JqrGN6yKJMnz4SQXLzXuKA/exec',
     
     // Rutas relativas (GitHub Pages sirve todo desde la raíz del repo)
     BASE_URL: '.',
